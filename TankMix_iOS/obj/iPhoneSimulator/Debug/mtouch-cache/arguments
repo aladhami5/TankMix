@@ -1,0 +1,31 @@
+# Version: 7.0.6.168 (2ed9bc9)
+# [first argument, ignore] # /Users/Wen/Projects/Madmuc/TankMix/TankMix_iOS/bin/iPhoneSimulator/Debug/mtouch.exe
+/Developer/MonoTouch/usr/bin/mtouch \
+	-sdkroot \
+	/Applications/Xcode.app/Contents/Developer \
+	--cache \
+	/Users/Wen/Projects/Madmuc/TankMix/TankMix_iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
+	--nomanifest \
+	--nosign \
+	-sim \
+	/Users/Wen/Projects/Madmuc/TankMix/TankMix_iOS/bin/iPhoneSimulator/Debug/TankMix_iOS.app \
+	-r \
+	/Users/Wen/Projects/Madmuc/TankMix/TankMix_Share/bin/Debug/TankMix_Share.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Xml.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Core.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/MonoTouch.Dialog-1.dll \
+	-debug \
+	-nolink \
+	-sdk \
+	7.0 \
+	-targetver \
+	7.0 \
+	--abi=i386 \
+	/Users/Wen/Projects/Madmuc/TankMix/TankMix_iOS/bin/iPhoneSimulator/Debug/TankMix_iOS.exe \

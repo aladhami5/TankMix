@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankMix_iOS", "TankMix_iOS\TankMix_iOS.csproj", "{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TankMix_Share", "TankMix_Share\TankMix_Share.csproj", "{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Release|iPhone.Build.0 = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9D57E81A-A1FB-49E7-9295-1E9D6FDC04DD}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Debug|iPhone.Build.0 = Debug|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Release|iPhone.ActiveCfg = Release|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Release|iPhone.Build.0 = Release|iPhone
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{BEB0E2B1-1E4B-4025-B355-8C6CED436A72}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TankMix_iOS\TankMix_iOS.csproj
+	EndGlobalSection
+EndGlobal
