@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4_64.7.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TankMix_iOS/ViewControllers/TankMix_History_Table.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TankMix_iOS/ViewControllers/TankMix_History_Result.cs">
     <Files>
-      <File FileName="TankMix_iOS/ViewControllers/TankMix_History_Table.cs" Line="17" Column="29" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_History_Result.cs" Line="85" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

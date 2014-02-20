@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
@@ -24,7 +24,7 @@ namespace TankMix_iOS
 
 			Root.Remove(Section);
 			Section = new Section ();
-			
+
 
 			for (int i=1; i<=elements.Count;i++)
 			{
@@ -45,12 +45,15 @@ namespace TankMix_iOS
 						{
 							// Detail
 							Console.Out.WriteLine("Detail");
+							this.NavigationController.PushViewController(new TankMix_History_Result(HistoryManager.SharedInstance.GetResultList()[i-2]),true);
 						}else if (e.ButtonIndex == 1){
-							// Edit
-							Console.Out.WriteLine("Edit");
+							// Share
+							Console.Out.WriteLine("Send by Email");
 						}else if (e.ButtonIndex == 2){
 							//Delete
 							Console.Out.WriteLine("Delete");
+							HistoryManager.SharedInstance.GetResultList().RemoveAt(i-2);
+							ViewWillAppear(true);
 						}else{
 							// Cancel
 							Console.Out.WriteLine("Cancel");

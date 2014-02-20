@@ -6,7 +6,7 @@ namespace TankMix_Share
 	public class CalculationResult
 	{
 		public AreaTreatedByTank areatreatedbytank_value = new AreaTreatedByTank ();
-		public ProductAmount productrate_value = new ProductAmount();
+		public ProductAmount productamount_value = new ProductAmount();
 		public AdjuvantAmount adjuvantamount_value = new AdjuvantAmount();
 		public TotalWater totalwater_value = new TotalWater ();
 		public double numberOfTanksNeeded { set; get;}

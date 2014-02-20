@@ -69,9 +69,9 @@ namespace TankMix_iOS
 			AreaRemaining.Value = f.AreaRemaning.ToString () + " " + f.AreaRemaning_Unit;
 			TankFill.Value = f.TankFill.ToString () + " " + f.TankFill_Unit;
 			Net.Value = f.Net.ToString () + " " + f.Net_Unit;
-			TankArea.Value = f.ThisTankArea.ToString () + " " + f.ThisTankArea_Unit;
-			Product.Value = f.Product.ToString () + " " + f.Product_Unit;
-			Adjuvant.Value = f.Adjuvant.ToString () + " " + f.Adjuvant_Unit;
+			TankArea.Value = string.Format("{0:00.00}",f.ThisTankArea) + " " + f.ThisTankArea_Unit;
+			Product.Value = string.Format("{0:00.00}",f.Product) + " " + f.Product_Unit;
+			Adjuvant.Value = string.Format("{0:00.00}",f.Adjuvant) + " " + f.Adjuvant_Unit;
 		}
 
 	}

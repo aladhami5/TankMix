@@ -21,6 +21,10 @@
 	/Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll \
 	-r \
 	/Developer/MonoTouch/usr/lib/mono/2.1/MonoTouch.Dialog-1.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Json.dll \
+	-r \
+	/Users/Wen/Projects/Madmuc/TankMix/Components/json.net-4.5.11/lib/ios/Newtonsoft.Json.dll \
 	-debug \
 	-nolink \
 	-sdk \

@@ -22,9 +22,11 @@ namespace TankMix_Share
 
 		public void SetValueAndUnit(AreaPerRoundUnit u, double input)
 		{
+			this.value = input;
 			switch(u)
 			{
 			case AreaPerRoundUnit.Acres:
+
 				this.unit = u;
 				Acres = input;
 				Ha = CalculationManager.SharedInstance.AcresToHa (input);
