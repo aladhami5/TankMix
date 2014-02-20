@@ -44,6 +44,14 @@
     <Compile Include="Objects\TotalArea.cs" />
     <Compile Include="Objects\BoomWidth.cs" />
     <Compile Include="Objects\SwathLength.cs" />
+    <Compile Include="Objects\SumpCapacity.cs" />
+    <Compile Include="Objects\AreaTreatedByTank.cs" />
+    <Compile Include="Objects\CalculationResult.cs" />
+    <Compile Include="Objects\ProductAmount.cs" />
+    <Compile Include="Objects\AdjuvantAmount.cs" />
+    <Compile Include="Objects\TotalWater.cs" />
+    <Compile Include="Objects\AreaPerRound.cs" />
+    <Compile Include="Objects\Fill.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>

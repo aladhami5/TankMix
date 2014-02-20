@@ -104,10 +104,14 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewControllers\TankMix_TapViewController.cs" />
     <Compile Include="ViewControllers\TankMix_Calculation_Screen_One.cs" />
-    <Compile Include="ViewControllers\TankMox_History_Table.cs" />
     <Compile Include="ViewControllers\TankMix_Calculation_Screen_Two.cs" />
     <Compile Include="ViewControllers\TankMix_Calculation_Screen_Three.cs" />
     <Compile Include="ViewControllers\TankMix_Calculation_Screen_Four.cs" />
+    <Compile Include="ViewControllers\TankMix_CalculationCreateNewFill.cs" />
+    <Compile Include="ViewControllers\TankMix_CalculationCreateFill.cs" />
+    <Compile Include="Example.cs" />
+    <Compile Include="ViewControllers\TankMix_History_Table.cs" />
+    <Compile Include="ViewControllers\TankMix_History_Result.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

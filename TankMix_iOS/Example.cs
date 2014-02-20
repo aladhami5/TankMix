@@ -7,11 +7,11 @@ using MonoTouch.Dialog;
 
 namespace TankMix_iOS
 {
-	public partial class TankMox_History_Table : DialogViewController
+	public partial class Example : DialogViewController
 	{
-		public TankMox_History_Table () : base (UITableViewStyle.Grouped, null)
+		public Example () : base (UITableViewStyle.Grouped, null)
 		{
-			Root = new RootElement ("TankMox_History_Table") {
+			Root = new RootElement ("Example") {
 				new Section ("First Section") {
 					new StringElement ("Hello", () => {
 						new UIAlertView ("Hola", "Thanks for tapping!", null, "Continue").Show (); 

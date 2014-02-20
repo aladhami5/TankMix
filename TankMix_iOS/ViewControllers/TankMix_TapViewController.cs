@@ -25,7 +25,7 @@ namespace TankMix_iOS
 
 			if (HistoryVC == null) 
 			{
-				HistoryVC = new UINavigationController (new TankMox_History_Table ());
+				HistoryVC = new UINavigationController (new TankMix_History_Table ());
 				HistoryVC.Title = "History";
 			}
 

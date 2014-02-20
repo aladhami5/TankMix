@@ -16,6 +16,8 @@ namespace TankMix_iOS
 		TankMixRadioGroupElement tcRG;
 		EntryElement trEE;
 		TankMixRadioGroupElement trRG;
+		EntryElement scEE;
+		TankMixRadioGroupElement scRG;
 
 		Section remainderS;
 
@@ -82,7 +84,7 @@ namespace TankMix_iOS
 					break;
 				}
 
-				trRG.Selected = tcRG.SelectedValue;
+				//trRG.Selected = tcRG.SelectedValue;
 				//Root.Reload(remainderS,UITableViewRowAnimation.Fade);
 			};
 
@@ -124,9 +126,40 @@ namespace TankMix_iOS
 			remainderS.Add (trEE);
 			remainderS.Add (trRGRoot);
 
+			// Sump Capacity
+			var sumpS = new Section ();
+			scEE = new EntryElement ("Sump Capacity","Value","0");
+			scEE.TextAlignment = UITextAlignment.Right;
+			scEE.KeyboardType = UIKeyboardType.NumberPad;
+
+			scRG = new TankMixRadioGroupElement (-1);
+			var scRGRoot = new RootElement ("Sump Capacity Unit",scRG);
+			var scRGRootSection = new Section ("Unit Select"){ 
+				new RadioElement ("US gal"),
+				new RadioElement("Imp gal"),
+				new RadioElement ("L"),
+			};
+			scRG.ValueSelectedEvent += (object sender, EventArgs e) => {
+				switch(scRG.Selected){
+				case 0:
+					HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.Us_gal,double.Parse(scEE.Value));
+					break;
+				case 1:
+					HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.Imp_gal,double.Parse(scEE.Value));
+					break;
+				case 2:
+					HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.L,double.Parse(scEE.Value));
+					break;
+				}
+			};
+			scRGRoot.Add (scRGRootSection);
+			sumpS.Add (scEE);
+			sumpS.Add (scRGRoot);
+
 
 			Root.Add (capacityS);
 			Root.Add (remainderS);
+			Root.Add (sumpS);
 		}
 
 		private void SetDefaultDataAndUnit()
@@ -136,6 +169,9 @@ namespace TankMix_iOS
 
 			trEE.Value = HistoryManager.SharedInstance.GetCurrentTankData ().tankremainder_value.value.ToString ();
 			trRG.Selected = (int)HistoryManager.SharedInstance.GetCurrentTankData ().tankremainder_value.unit;
+
+			scEE.Value = HistoryManager.SharedInstance.GetCurrentTankData ().sumpcapacity_value.value.ToString ();
+			scRG.Selected = (int)HistoryManager.SharedInstance.GetCurrentTankData ().sumpcapacity_value.unit;
 		}
 
 		private void SaveValueToCurrentTankData()
@@ -166,6 +202,19 @@ namespace TankMix_iOS
 				break;
 			case 2:
 				HistoryManager.SharedInstance.GetCurrentTankData ().tankremainder_value.SetValueAndUnit(TankRemainderUnit.L,double.Parse(trEE.Value));
+				break;
+
+			}
+
+			switch(scRG.Selected){
+			case 0:
+				HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.Us_gal,double.Parse(scEE.Value));
+				break;
+			case 1:
+				HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.Imp_gal,double.Parse(scEE.Value));
+				break;
+			case 2:
+				HistoryManager.SharedInstance.GetCurrentTankData().sumpcapacity_value.SetValueAndUnit(SunpCapacityUnit.L,double.Parse(scEE.Value));
 				break;
 			}
 

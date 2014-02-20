@@ -88,17 +88,17 @@ namespace TankMix_iOS
 			bwEE = new EntryElement ("Boom Width","Value","0");
 			bwEE.TextAlignment = UITextAlignment.Right;
 			bwEE.KeyboardType = UIKeyboardType.NumberPad;
-			bwEE.Changed += (object sender, EventArgs e) => {
-				HistoryManager.SharedInstance.GetCurrentTankData ().boomwidth_value.SetValue(double.Parse(bwEE.Value));
-			};
+//			bwEE.Changed += (object sender, EventArgs e) => {
+//				HistoryManager.SharedInstance.GetCurrentTankData ().boomwidth_value.SetValue(double.Parse(bwEE.Value));
+//			};
 			bwRG = new TankMixRadioGroupElement (-1);
 			var bwRGRoot = new RootElement ("Boom Width Unit", bwRG);
 			var bwRGRootSection = new Section ("Select Unit"){
 				new RadioElement("m"),
-				new RadioElement("f"),
+				new RadioElement("ft"),
 			};
 			taRG.ValueSelectedEvent += (object sender, EventArgs e) => {
-				switch(taRG.Selected)
+				switch(bwRG.Selected)
 				{
 				case 0:
 					var c = bwEE.Value;
@@ -188,7 +188,7 @@ namespace TankMix_iOS
 			}
 			//HistoryManager.SharedInstance.GetCurrentTankData ().boomwidth_value.value = double.Parse (bwEE.Value);
 			//HistoryManager.SharedInstance.GetCurrentTankData().boomwidth_value.unit = (BoomWidthUnit)bwRG.Selected;
-			switch(taRG.Selected)
+			switch(bwRG.Selected)
 			{
 			case 0:
 				var c = bwEE.Value;

@@ -12,6 +12,7 @@ namespace TankMix_Share
 		public TotalArea totalarea_value = new TotalArea ();
 		public BoomWidth boomwidth_value = new BoomWidth ();
 		public SwathLength swathlength_value = new SwathLength ();
+		public SumpCapacity sumpcapacity_value = new SumpCapacity ();
 
 		public double number_headlands_swaths_value;
 		public Tank ()
