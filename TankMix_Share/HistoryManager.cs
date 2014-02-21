@@ -5,8 +5,8 @@ namespace TankMix_Share
 {
 	public class HistoryManager
 	{
-		private static Tank currentTankData;
-		private static List <CalculationResult> resultList;
+		private Tank currentTankData;
+		private List <CalculationResult> resultList;
 		private static HistoryManager sharedInstance;
 
 
@@ -71,6 +71,8 @@ namespace TankMix_Share
 
 			currentTankData.number_headlands_swaths_value = 0.0;
 		}
+
+
 
 
 	}

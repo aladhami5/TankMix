@@ -10,10 +10,10 @@ namespace TankMix_iOS
 {
 	public partial class TankMix_CalculationCreateFill : DialogViewController
 	{
-		public TankMix_CalculationCreateFill (int Index, List<Fill> Fills,UINavigationController navi) : base (UITableViewStyle.Grouped, null)
+		public TankMix_CalculationCreateFill (int Index, List<Fill> Fills) : base (UITableViewStyle.Grouped, null)
 		{
 			this.Pushing = true;
-			Root = new RootElement ("TankMix_CalculationCreateFill");
+			Root = new RootElement ("Add Input to Fill");
 			var Remainder = new EntryElement ("Remainder","Value",string.Empty);
 			Remainder.TextAlignment = UITextAlignment.Right;
 			Remainder.KeyboardType = UIKeyboardType.NumberPad;
@@ -31,19 +31,19 @@ namespace TankMix_iOS
 					var newFill = new Fill (double.Parse(Remainder.Value),double.Parse(TankFill.Value));
 					newFill.Name =(Index+1).ToString();
 					Fills.Add(newFill);
-					navi.PushViewController( new TankMix_CalculationCreateNewFill(newFill,navi),true);
+					this.NavigationController.PushViewController( new TankMix_CalculationCreateNewFill(newFill),true);
 				}else{
 					if (Index <= Fills.Count){
 						// contain
 						Console.Out.WriteLine("Contained");
-						navi.PushViewController(new TankMix_CalculationCreateNewFill(Fills[Index-1],navi),true);
+						NavigationController.PushViewController(new TankMix_CalculationCreateNewFill(Fills[Index-1]),true);
 
 					}else {
 						if (Index - Fills.Count == 1){
 							// last , create
 							var lastFill = new Fill (Fills[Fills.Count-1],double.Parse(Remainder.Value),double.Parse(TankFill.Value));
 							Fills.Add(lastFill);
-							navi.PushViewController( new TankMix_CalculationCreateNewFill(lastFill,navi),true);
+							NavigationController.PushViewController( new TankMix_CalculationCreateNewFill(lastFill),true);
 
 							Console.Out.WriteLine("Created,new");
 

@@ -12,7 +12,8 @@ namespace TankMix_iOS
 	{
 		StringElement Remainder;
 		StringElement AreaTreated;
-		EntryElement AreaRemaining;
+		EntryElement AreaRemaining_E;
+		StringElement AreaRemaining_S;
 		StringElement TankFill;
 		StringElement Net;
 		StringElement TankArea;
@@ -20,8 +21,9 @@ namespace TankMix_iOS
 		StringElement Adjuvant;
 
 		Fill localFill;
+		Boolean _isLast;
 
-		public TankMix_CalculationCreateNewFill (Fill fill, UINavigationController navi) : base (UITableViewStyle.Grouped, null)
+		public TankMix_CalculationCreateNewFill (Fill fill) : base (UITableViewStyle.Grouped, null)
 		{
 			Root = new RootElement ("");
 			localFill = new Fill ();
@@ -32,9 +34,9 @@ namespace TankMix_iOS
 
 			Remainder = new StringElement ("Remainder",string.Empty);
 			AreaTreated = new StringElement ("Area  Treated so far", string.Empty);
-			AreaRemaining = new EntryElement ("Area Remaining", string.Empty, string.Empty);
-			AreaRemaining.KeyboardType = UIKeyboardType.NumbersAndPunctuation;
-			AreaRemaining.TextAlignment = UITextAlignment.Right;
+		
+			AreaRemaining_S = new StringElement ("Area Remaining",string.Empty);
+
 			TankFill = new StringElement ("Tank Fill", string.Empty);
 
 			Net = new StringElement ("Net",string.Empty);
@@ -44,7 +46,10 @@ namespace TankMix_iOS
 
 			Section.Add (Remainder);
 			Section.Add (AreaTreated);
-			Section.Add (AreaRemaining);
+		
+			Section.Add (AreaRemaining_S);
+			
+
 			Section.Add (TankFill);
 			Section.Add (Net);
 			Section.Add (TankArea);
@@ -56,7 +61,7 @@ namespace TankMix_iOS
 			var backBtn = new UIBarButtonItem ();
 			backBtn.Title = "Back";
 			backBtn.Clicked += (object sender, EventArgs e) => {
-				navi.PopViewControllerAnimated(true);
+				this.NavigationController.PopViewControllerAnimated(true);
 			};
 			this.NavigationItem.LeftBarButtonItem = backBtn;
 
@@ -64,11 +69,13 @@ namespace TankMix_iOS
 		}
 		public void update (Fill f)
 		{
-			Remainder.Value = f.Remainder.ToString () + " " + f.Remainder_Unit;
-			AreaTreated.Value = f.AreaTreated.ToString () + " " + f.AreaTreated_Unit;
-			AreaRemaining.Value = f.AreaRemaning.ToString () + " " + f.AreaRemaning_Unit;
-			TankFill.Value = f.TankFill.ToString () + " " + f.TankFill_Unit;
-			Net.Value = f.Net.ToString () + " " + f.Net_Unit;
+			Remainder.Value = string.Format("{0:00.00}",f.Remainder) + " " + f.Remainder_Unit;
+			AreaTreated.Value = string.Format("{0:00.00}",f.AreaTreated) + " " + f.AreaTreated_Unit;
+
+			AreaRemaining_S.Value = string.Format("{0:00.00}",f.AreaRemaning) + " " + f.AreaRemaning_Unit;
+
+			TankFill.Value = string.Format("{0:00.00}",f.TankFill) + " " + f.TankFill_Unit;
+				Net.Value = string.Format("{0:00.00}",f.Net) + " " + f.Net_Unit;
 			TankArea.Value = string.Format("{0:00.00}",f.ThisTankArea) + " " + f.ThisTankArea_Unit;
 			Product.Value = string.Format("{0:00.00}",f.Product) + " " + f.Product_Unit;
 			Adjuvant.Value = string.Format("{0:00.00}",f.Adjuvant) + " " + f.Adjuvant_Unit;

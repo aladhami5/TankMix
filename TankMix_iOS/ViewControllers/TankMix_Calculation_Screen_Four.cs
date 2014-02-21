@@ -23,13 +23,26 @@ namespace TankMix_iOS
 			this.Pushing = true;
 			Root = new RootElement ("Results");
 			Result = new CalculationResult ();
-			Result.TankInput = HistoryManager.SharedInstance.GetCurrentTankData ();
 			InitializeUserInterface ();
 		}
 
 		private void InitializeUserInterface ()
 		{
 			var Section = new Section ();
+			// Tank Input
+			var CurTank = HistoryManager.SharedInstance.GetCurrentTankData ();
+
+			Result.TankInput.applicationvolume_value.SetValueAndUnit (CurTank.applicationvolume_value.unit,CurTank.applicationvolume_value.value);
+			Result.TankInput.productrate_value.SetValueAndUnit (CurTank.productrate_value.unit,CurTank.productrate_value.value);
+			Result.TankInput.adjuvantrate_value.SetValueAndUnit (CurTank.adjuvantrate_value.unit,CurTank.adjuvantrate_value.value);
+			Result.TankInput.tankcapacity_value.SetValueAndUnit (CurTank.tankcapacity_value.unit,CurTank.tankcapacity_value.value);
+			Result.TankInput.tankremainder_value.SetValueAndUnit (CurTank.tankremainder_value.unit,CurTank.tankremainder_value.value);
+			Result.TankInput.sumpcapacity_value.SetValueAndUnit (CurTank.sumpcapacity_value.unit,CurTank.sumpcapacity_value.value);
+			Result.TankInput.totalarea_value.SetValueAndUnit (CurTank.totalarea_value.unit,CurTank.totalarea_value.value);
+			Result.TankInput.boomwidth_value.SetValueAndUnit (CurTank.boomwidth_value.unit,CurTank.boomwidth_value.value);
+			Result.TankInput.swathlength_value.SetValueAndUnit (CurTank.swathlength_value.unit,CurTank.swathlength_value.value);
+			Result.TankInput.number_headlands_swaths_value = CurTank.number_headlands_swaths_value;
+
 			// Area Treated By Tank
 			var r_AreaTreatedByTank = 0.0;
 			r_AreaTreatedByTank = CalculationManager.SharedInstance.AreaTreatedByTank ();
@@ -219,11 +232,11 @@ namespace TankMix_iOS
 				var btn = new StringElement ("Fill "+i, string.Empty);
 				btn.Tapped += () => {
 				//Console.Out.WriteLine(btn.Caption);
-				this.NavigationController.PushViewController(new TankMix_CalculationCreateFill (Convert.ToInt32(btn.Caption.Split(' ')[1]),Result.fills,this.NavigationController),true);
+				this.NavigationController.PushViewController(new TankMix_CalculationCreateFill (Convert.ToInt32(btn.Caption.Split(' ')[1]),Result.fills),true);
 				};
 				FillSection.Add (btn);
 			}
-
+	
 			Root.Add (Section);
 			notnRGRoot.Add (FillSection);
 
@@ -231,7 +244,22 @@ namespace TankMix_iOS
 			var SaveBtn = new UIBarButtonItem ();
 			SaveBtn.Title = "Save";
 			SaveBtn.Clicked += (object sender, EventArgs e) => {
-				HistoryManager.SharedInstance.GetResultList().Add(Result);
+				//Result.TankInput = HistoryManager.SharedInstance.GetCurrentTankData ();
+
+
+				var a = HistoryManager.SharedInstance.GetResultList();
+				a.Add(Result);
+				//var Alert = new UIAlertView ("", "Successfully Save", null, "Continue").Show (); 
+				var Alert = new UIAlertView ();
+				Alert.Message = "Successfully saved";
+				Alert.AddButton ("Continue");
+				Alert.Clicked += (object s, UIButtonEventArgs ee) => {
+					if(ee.ButtonIndex == 0)
+					{
+						this.NavigationController.PopToRootViewController(true);
+					}
+				};
+				Alert.Show();
 			};
 			this.NavigationItem.RightBarButtonItem = SaveBtn;
 

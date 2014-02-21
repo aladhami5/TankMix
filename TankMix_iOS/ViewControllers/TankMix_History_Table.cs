@@ -5,6 +5,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.Dialog;
 using TankMix_Share;
+using MonoTouch.MessageUI;
+
 
 namespace TankMix_iOS
 {
@@ -28,12 +30,13 @@ namespace TankMix_iOS
 
 			for (int i=1; i<=elements.Count;i++)
 			{
-				Section.Add (new StringElement("Result "+i,()=>{
-					Console.Out.WriteLine(i);
+				var temp = i;
+				Section.Add (new StringElement("Result "+temp,()=>{
+					Console.Out.WriteLine(temp);
 					var ActionSheet = new UIActionSheet ("Options");
 
 					ActionSheet.AddButton("Detail");
-					ActionSheet.AddButton("Edit");
+					ActionSheet.AddButton("Send by Email");
 					ActionSheet.AddButton("Delete");
 					ActionSheet.AddButton("Cancel");
 
@@ -45,10 +48,21 @@ namespace TankMix_iOS
 						{
 							// Detail
 							Console.Out.WriteLine("Detail");
-							this.NavigationController.PushViewController(new TankMix_History_Result(HistoryManager.SharedInstance.GetResultList()[i-2]),true);
+							var t = new CalculationResult ();
+							t = HistoryManager.SharedInstance.GetResultList()[temp-1];
+							this.NavigationController.PushViewController(new TankMix_History_Result(t),true);
 						}else if (e.ButtonIndex == 1){
 							// Share
 							Console.Out.WriteLine("Send by Email");
+							var Email = new MFMailComposeViewController();
+							Email.Finished += (object s, MFComposeResultEventArgs ea) => {
+								ea.Controller.DismissViewController(true,null);
+							};
+							var msg = "";
+							Email.SetMessageBody(msg,false);
+							this.NavigationController.PresentViewController(Email,true,null);
+
+							this.NavigationController.PopToRootViewController(true);
 						}else if (e.ButtonIndex == 2){
 							//Delete
 							Console.Out.WriteLine("Delete");

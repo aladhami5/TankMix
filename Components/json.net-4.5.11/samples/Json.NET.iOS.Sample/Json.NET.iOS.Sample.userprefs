@@ -1,0 +1,23 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4_64.7.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../TankMix_iOS/TankMix_History_Table.cs">
+    <Files>
+      <File FileName="../../../../TankMix_iOS/TankMix_History_Table.cs" Line="71" Column="1" />
+      <File FileName="../../../../TankMix_Share/HistoryManager.cs" Line="75" Column="3" />
+      <File FileName="SampleViewController.cs" Line="6" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Json.NET iOS Sample" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_Four.cs" line="216" offsetX="379" offsetY="3225" expression="fill_2" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

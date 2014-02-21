@@ -115,7 +115,8 @@
     <Compile Include="ViewControllers\TankMix_CalculationCreateFill.cs" />
     <Compile Include="Example.cs" />
     <Compile Include="ViewControllers\TankMix_History_Result.cs" />
-    <Compile Include="TankMix_History_Table.cs" />
+    <Compile Include="ViewControllers\TankMix_History_Fill.cs" />
+    <Compile Include="ViewControllers\TankMix_History_Table.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -109,7 +109,13 @@ namespace TankMix_iOS
 			FillBtn.Title = "Fills";
 			FillBtn.Clicked += (object sender, EventArgs e) => {
 
+				if(R.numberOfFills == 0){
+
+				}else{
+					this.NavigationController.PushViewController(new TankMix_History_Fill(R.fills,int.Parse(R.numberOfFills.ToString())),true);
+				}
 			};
+			this.NavigationItem.RightBarButtonItem = FillBtn;
 		}
 
 		// Customized Keyboard view and "Done" button for ending input

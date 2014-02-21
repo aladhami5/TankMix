@@ -5,6 +5,8 @@ namespace TankMix_Share
 {
 	public class CalculationResult
 	{
+		public Tank TankInput = new Tank();
+
 		public AreaTreatedByTank areatreatedbytank_value = new AreaTreatedByTank ();
 		public ProductAmount productamount_value = new ProductAmount();
 		public AdjuvantAmount adjuvantamount_value = new AdjuvantAmount();
@@ -14,7 +16,6 @@ namespace TankMix_Share
 		public AreaPerRound areaperround_value = new AreaPerRound();
 		public double roundpertank { set; get;}
 		public List<Fill> fills = new List<Fill>();
-		public Tank TankInput;
 
 		public CalculationResult ()
 		{

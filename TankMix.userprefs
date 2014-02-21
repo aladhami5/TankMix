@@ -1,12 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4_64.7.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TankMix_iOS/ViewControllers/TankMix_History_Result.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_Four.cs">
     <Files>
-      <File FileName="TankMix_iOS/ViewControllers/TankMix_History_Result.cs" Line="85" Column="17" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_Four.cs" Line="235" Column="6" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_History_Table.cs" Line="27" Column="1" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_History_Result.cs" Line="63" Column="1" />
+      <File FileName="TankMix_Share/HistoryManager.cs" Line="38" Column="4" />
+      <File FileName="TankMix_Share/Objects/CalculationResult.cs" Line="17" Column="1" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_Two.cs" Line="96" Column="32" />
+      <File FileName="TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_One.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/Wen/Projects/Madmuc/TankMix/TankMix_iOS/ViewControllers/TankMix_History_Table.cs" line="25" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="TankMix_iOS/ViewControllers/TankMix_Calculation_Screen_Four.cs" line="216" offsetX="379" offsetY="3225" expression="fill_2" liveUpdate="False" />
